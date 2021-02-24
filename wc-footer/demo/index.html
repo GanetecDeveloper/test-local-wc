@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+  <style>
+    html {
+      --mdc-typography-button-font-size: 16px;
+      --mdc-typography-button-text-transform: none;
+      --mdc-theme-primary: #3CA3E5;
+      --mdc-theme-secondary: #C2E7FF;
+      --mdc-theme-surface: #FFFFFF;
+      --mdc-theme-background: #FFFFFF;
+    }
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit-html';
+    import '../dist/wc-footer.js';
+
+    render(
+      html`
+        <wc-footer>
+          <img slot="right" src="logo-ceges.svg">
+          <img slot="left" src="logo-sas.svg">
+        </wc-footer>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>

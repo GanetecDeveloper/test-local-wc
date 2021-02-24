@@ -13,16 +13,14 @@
 
   <script type="module">
     import { html, render } from 'lit-html';
-    import '../dist/wc-card.js';
+    import '../dist/planilla-fila.js';
 
-    const title = 'Hello Card!';
+    const title = 'Hello owc World!';
     render(
       html`
-        <wc-card .title=${title}
-          text="This is a card">
-          <h1 slot="content">Custom text for content card</h1>
+        <planilla-fila .title=${title}>
           some more light-dom
-        </wc-card>
+        </planilla-fila>
       `,
       document.querySelector('#demo')
     );

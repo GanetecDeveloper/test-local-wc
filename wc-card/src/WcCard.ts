@@ -11,24 +11,19 @@ export class WcCard extends LitElement {
   @property({ type: String }) 
   public title = 'Hey there';
 
-  @property({ type: Number }) 
-  public counter = 5;
-
   @property({type: String}) 
   public image = '';
 
   @property({type: String}) 
   public text = '';
 
-  __increment() {
-    this.counter += 1;
-  }
-
   render() {
     return html`
     <div class="card">
       <div class="g360-card-header">
-        <h3>${this.title}</h3>
+        <slot name="header">
+          <h3>${this.title}</h3>
+        </slot>
       </div>
       ${this.image?
         html`
@@ -37,10 +32,12 @@ export class WcCard extends LitElement {
         </div>`:``
       }
       <div class="g360-card-content mdc-card__content">
-        <p>${this.text}</p>
+        <slot name="content">
+          <p>${this.text}</p>
+        </slot>
       </div>
       <div class="g360-card-actions">
-        <button @click=${this.__increment}>action</button>
+        <button >action</button>
       </div>
     </div>
     `;
